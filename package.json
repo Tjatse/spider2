@@ -1,7 +1,7 @@
 {
   "name": "spider2",
-  "version": "0.0.1",
-  "description": "A 2nd generation spider to crawl any article site, automatic read title and article.",
+  "version": "0.0.2",
+  "description": "A 2nd generation spider to crawl any article site, automatic reading title and content.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec -t 10000"
@@ -11,12 +11,12 @@
     "url": "git://github.com/Tjatse/spider2.git"
   },
   "keywords": [
-    "read",
-    "scrape",
-    "grab",
-    "article",
+    "crawl",
+    "crawling",
     "spider",
-    "readability"
+    "spidering",
+    "readability",
+    "scrape"
   ],
   "author": "Tjatse",
   "license": "Apache, Version 2.0",
@@ -27,7 +27,13 @@
     "node >= 0.8.0"
   ],
   "dependencies": {
-
+    "cheerio":"~0.17.0",
+    "lodash":"~2.4.1",
+    "read-art":"^0.2.9",
+    "req-fast": "^0.2.3",
+    "async":"~0.9.0",
+    "chalk": "~0.5.1",
+    "URIjs":"~1.14.1"
   },
   "devDependencies": {
     "mocha": "1.21.4",
