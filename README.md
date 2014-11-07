@@ -7,8 +7,9 @@ A 2nd generation spider to crawl any article site, automatic reading title and c
 
 # Features
 ## Multi-core crawling
-Right now it is not a single spider runs in a single thread. To take advantage of multi-core systems we may wanna launch
-a cluster of processes to handle the load. Crawling fast and in order to maximum performance.
+It is not a single spider runs in a single thread. To take advantage of multi-core systems we maybe wanna launch
+a cluster of processes to handle the load, this is exactly what `spider2` does - Crawling fast and in order to
+maximum performance.
 
 ## Concurrency
 **Multi-core crawling** feature is just make spiders work in a fork mode, but concurrency makes them work together in a
@@ -23,6 +24,7 @@ of websites that you wanna scrape, `spider2` will handle anything else, take a c
 All the jobs are managed by async queue, so you can keep pushing the urls which to be crawled/read.
 
 ## Debug mode
+Never miss any tip.
 ![screenshot](screenshot/debug.jpg)
 
 ## More features
@@ -93,8 +95,7 @@ spider.on('data', function (req, res) {
 ```
 
 #### end
-This event is emitted after all the spiders terminated abnormally.
-Example:
+This event is emitted after all the spiders terminated abnormally, e.g.:
 ```javascript
 spider.on('end', function () {
   console.log('[END]');
@@ -103,33 +104,30 @@ spider.on('end', function () {
 
 ### Methods
 #### Crawl
-Crawl links, option could be one of below:
+Crawl links, `OPTION` could be one of below:
 - **String** Url
 - **Array** Array of urls, both `[String, String, ...]` and `[Object, Object, ...]` will be fine.
 - **Object** Must including `uri` property.
 
-Example:
+e.g.:
 ```javascript
 spider.crawl([OPTION]);
 ```
 
 #### read
-Read title and content of article, option is same as above.
-Example:
+Read title and content of article, `OPTION` is same as above, e.g.:
 ```javascript
 spider.read([OPTION]);
 ```
 
 #### destroy
-Peaceful quit.
-Example:
+Peaceful quit, e.g.:
 ```javascript
 spider.destroy();
 ```
 
 #### ping
-Ping the spider and returns workers' status Array.
-Example:
+Ping the spider and returns workers' status Array, e.g.:
 ```javascript
 var pong = spider.ping();
 console.log(pong);
@@ -150,12 +148,15 @@ console.log(pong);
 Using NSQ to manage the relationships between links and articles, or links and links, will make this module more powerful.
 
 In my case, I have 9 centos, which have installed ElasticSearch 1.3.2, about 9 million data can be crawled every month.
+
 ![screenshot](screenshot/para.jpg)
 
-Ample ability to process data, keep queue out of choking.
+Ample ability to process data continuously, keep queue out of choking.
+
 ![screenshot](screenshot/nsq.jpg)
 
 Hit title & content.
+
 ![screenshot](screenshot/search.jpg)
 
 # Test
