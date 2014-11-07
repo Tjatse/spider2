@@ -1,8 +1,8 @@
 {
   "name": "spider2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A 2nd generation spider to crawl any article site, automatic reading title and content.",
-  "main": "index.js",
+  "main": "./lib/spider.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec -t 10000"
   },
@@ -29,7 +29,7 @@
   "dependencies": {
     "cheerio":"~0.17.0",
     "lodash":"~2.4.1",
-    "read-art":"^0.2.9",
+    "read-art":"^0.3.0",
     "req-fast": "^0.2.3",
     "async":"~0.9.0",
     "chalk": "~0.5.1",
