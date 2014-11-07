@@ -23,7 +23,7 @@ of websites that you wanna scrape, `spider2` will handle anything else, take a c
 All the jobs are managed by async queue, so you can keep pushing the urls which to be crawled/read.
 
 ## Debug mode
-![screenshot](screenshot/debug.png)
+![screenshot](screenshot/debug.jpg)
 
 ## More features
 - Automatic User-Agent (actually I am a browser, not a spider).
@@ -145,6 +145,18 @@ console.log(pong);
 ```
 
 `id` is the id of worker, and `count` is the count of remaining jobs.
+
+# Production
+Using NSQ to manage the relationships between links and articles, or links and links, will make this module more powerful.
+
+In my case, I have 9 centos, which have installed ElasticSearch 1.3.2, about 9 million data can be crawled every month.
+![screenshot](screenshot/para.jpg)
+
+Ample ability to process data, keep queue out of choking.
+![screenshot](screenshot/nsq.jpg)
+
+Hit title & content.
+![screenshot](screenshot/search.jpg)
 
 # Test
 ```
