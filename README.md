@@ -22,6 +22,9 @@ of websites that you wanna scrape, `spider2` will handle anything else, take a c
 ## Queue
 All the jobs are managed by async queue, so you can keep pushing the urls which to be crawled/read.
 
+## Debug mode
+![screenshot](screenshot/debug.png)
+
 ## More features
 - Automatic User-Agent (actually I am a browser, not a spider).
 - Proxy supports (avoid being blocked by server).
