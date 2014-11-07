@@ -1,4 +1,4 @@
-spider2 [![NPM version](https://badge.fury.io/js/spider2.svg)](http://badge.fury.io/js/spider2) [![Build Status](https://travis-ci.org/Tjatse/node-readability.svg?branch=master)](https://travis-ci.org/Tjatse/node-readability)
+spider2 [![NPM version](https://badge.fury.io/js/spider2.svg)](http://badge.fury.io/js/spider2) [![Build Status](https://travis-ci.org/Tjatse/spider2.svg?branch=master)](https://travis-ci.org/Tjatse/spider2)
 =========
 
 A 2nd generation spider to crawl any article site, automatic reading title and content.
