@@ -103,7 +103,7 @@ spider.on('end', function () {
 ```
 
 ### Methods
-#### Crawl
+#### crawl
 Crawl links, `OPTION` could be one of below:
 - **String** Url
 - **Array** Array of urls, both `[String, String, ...]` and `[Object, Object, ...]` will be fine.
