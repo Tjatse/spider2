@@ -1,6 +1,6 @@
 {
   "name": "spider2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A 2nd generation spider to crawl any article site, automatic reading title and content.",
   "main": "./lib/spider.js",
   "scripts": {
