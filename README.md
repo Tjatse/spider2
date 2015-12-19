@@ -1,9 +1,16 @@
-spider2 [![NPM version](https://badge.fury.io/js/spider2.svg)](http://badge.fury.io/js/spider2) [![Build Status](https://travis-ci.org/Tjatse/spider2.svg?branch=master)](https://travis-ci.org/Tjatse/spider2)
+spider2 [![NPM version](https://badge.fury.io/js/spider2.svg)](http://badge.fury.io/js/spider2)
 =========
 
 A 2nd generation spider to crawl any article site, automatic reading title and content.
+# Performance
+In my case, the speed of [spider](https://github.com/Tjatse/spider2) is about **700 thousands documents per day**, **22 million per month**, and the maximize crawling speed is **450 per minute**, **avg 80 per minute**, the memory cost are about **200 megabytes** on each spider kernel, and the accuracy is about 90%, the rest 10% can be fixed by customizing [Score Rules](#score_rule) or [Selectors](selectors). it's better than any other readability modules.
 
-> Still in developing...
+![image](screenshots/performance.jpg)
+
+> Server infos: 
+> * 20M bandwidth of fibre-optical
+> * 8 Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz cpus
+> * 32G memory
 
 # Features
 ## Multi-core crawling
@@ -23,10 +30,6 @@ of websites that you wanna scrape, `spider2` will handle anything else, take a c
 ## Queue
 All the jobs are managed by async queue, so you can keep pushing the urls which to be crawled/read.
 
-## Debug mode
-Never miss any tip.
-![screenshot](screenshot/debug.jpg)
-
 ## More features
 - Automatic User-Agent (actually I am a browser, not a spider).
 - Proxy supports (avoid being blocked by server).
@@ -36,7 +39,7 @@ Never miss any tip.
 
 # Installation
 ```
-npm install spider2
+npm install spider2 --production
 ```
 
 # Programmatic
@@ -144,28 +147,13 @@ console.log(pong);
 
 `id` is the id of worker, and `count` is the count of remaining jobs.
 
-# Production
-Using NSQ to manage the relationships between links and articles, or links and links, will make this module more powerful.
-
-In my case, I have 9 centos, which have installed ElasticSearch 1.3.2, about 9 million data can be crawled every month.
-
-![screenshot](screenshot/para.jpg)
-
-Ample ability to process data continuously, keep queue out of choking.
-
-![screenshot](screenshot/nsq.jpg)
-
-Hit title & content.
-
-![screenshot](screenshot/search.jpg)
-
 # Test
 ```
 npm test
 ```
 
 # Examples
-Turn to `test/` or `/examples` directory.
+Head over to `test/` or `/examples` directory.
 
 # TODO
 - [ ] fix typo bug

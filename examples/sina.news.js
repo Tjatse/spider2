@@ -3,8 +3,7 @@ var _      = require('lodash'),
 
 var spider = Spider({
   debug      : true,
-  workers    : 7,
-  concurrency: 1
+  concurrency: 5
 });
 spider.on('error', function(err, req){
   if (req.worker) {
@@ -15,7 +14,9 @@ spider.on('error', function(err, req){
 });
 spider.on('data', function(req, res){
   if (req._type == Spider.type.LINK) {
-    spider.read(_.filter(res, validLink));
+    var links = _.filter(res, validLink);
+    console.log('length of articles:',  links.length);
+    spider.read(links);
   } else if (req._type == Spider.type.ARTICLE) {
     console.log(req.uri, res.title);
   }
@@ -25,30 +26,8 @@ spider.on('end', function(){
 });
 
 spider.crawl([
-  'http://www.sina.com.cn',
-  'http://www.163.com',
-  'http://www.autohome.com.cn',
-  'http://www.sohu.com'
+  'http://news.sina.com.cn'
 ]);
-
-/*
- setTimeout(function(){
- spider.crawl([
- 'http://getbootstrap.com/components/',
- 'https://lodash.com/docs#compact',
- 'https://www.npmjs.org/package/read-art'
- ]);
- }, 200);*/
-
-/*
- setTimeout(function(){
- spider.destroy();
- }, 500);*/
-
-setTimeout(function(){
-  var pong = spider.ping();
-  console.log(pong);
-}, 20000);
 
 function validLink(ele){
   if (!ele.uri || !ele.title) {
